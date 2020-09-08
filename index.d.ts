@@ -1,4 +1,3 @@
-import { Union, B } from 'ts-toolbelt';
 export declare type EventType = string | symbol;
 export declare type Handler<T = unknown> = (event: T) => void;
 export declare type WildcardHandler<T = Record<string, unknown>> = (type: keyof T, event: T[keyof T]) => void;
@@ -12,7 +11,7 @@ export interface Emitter<Events extends Record<EventType, unknown>> {
     off<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): void;
     off(type: '*', handler: WildcardHandler<Events>): void;
     emit<Key extends keyof Events>(type: Key, event: Events[Key]): void;
-    emit<Key extends keyof Events>(type: Union.Has<Events[Key], undefined> extends B.True ? Key : never): void;
+    emit<Key extends keyof Events>(type: undefined extends Events[Key] ? Key : never): void;
 }
 /**
  * Mitt: Tiny (~200b) functional event emitter / pubsub.
