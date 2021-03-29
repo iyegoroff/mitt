@@ -32,17 +32,17 @@ Mitt was made for the browser, but works in any JavaScript runtime. It has no de
 This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
 
 ```sh
-$ npm install --save mitt
+$ npm install --save strict-mitt
 ```
 
 Then with a module bundler like [rollup](http://rollupjs.org/) or [webpack](https://webpack.js.org/), use as you would anything else:
 
 ```javascript
 // using ES6 modules
-import mitt from "mitt";
+import mitt from "strict-mitt";
 
 // using CommonJS modules
-var mitt = require("mitt");
+var mitt = require("strict-mitt");
 ```
 
 The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com):
@@ -56,7 +56,7 @@ You can find the library on `window.mitt`.
 ## Usage
 
 ```js
-import mitt from "mitt";
+import mitt from "strict-mitt";
 
 const emitter = mitt();
 
@@ -83,7 +83,7 @@ emitter.off("foo", onFoo); // unlisten
 Set `"strict": true` in your tsconfig.json to get improved type inference for `mitt` instance methods.
 
 ```ts
-import mitt from "mitt";
+import mitt from "strict-mitt";
 
 type Events = {
   foo: string;

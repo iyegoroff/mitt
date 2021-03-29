@@ -1,6 +1,6 @@
 {
   "name": "strict-mitt",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Tiny 200b functional Event Emitter / pubsub.",
   "jsnext:main": "dist/mitt.es.js",
   "source": "src/index.ts",
