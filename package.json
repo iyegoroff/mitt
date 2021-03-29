@@ -1,6 +1,6 @@
 {
-  "name": "mitt",
-  "version": "2.1.0",
+  "name": "strict-mitt",
+  "version": "2.1.1",
   "description": "Tiny 200b functional Event Emitter / pubsub.",
   "jsnext:main": "dist/mitt.es.js",
   "source": "src/index.ts",
@@ -21,16 +21,17 @@
     "docs": "documentation readme src/index.ts --section API -q --parse-extension ts",
     "release": "npm run -s build -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
-  "repository": "developit/mitt",
+  "repository": "iyegoroff/strict-mitt",
   "keywords": [
     "events",
     "eventemitter",
     "emitter",
     "pubsub"
   ],
-  "homepage": "https://github.com/developit/mitt",
+  "homepage": "https://github.com/iyegoroff/strict-mitt",
   "authors": [
-    "Jason Miller <jason@developit.ca>"
+    "Jason Miller <jason@developit.ca>",
+    "iyegoroff <iegoroff@gmail.com>"
   ],
   "license": "MIT",
   "files": [

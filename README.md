@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://i.imgur.com/BqsX9NT.png" width="300" height="300" alt="mitt">
+  <img src="https://i.imgur.com/BqsX9NT.png" width="300" height="300" alt="strict-mitt">
   <br>
-  <a href="https://www.npmjs.org/package/mitt"><img src="https://img.shields.io/npm/v/mitt.svg" alt="npm"></a>
-  <img src="https://github.com/developit/mitt/workflows/CI/badge.svg" alt="build status">
-  <a href="https://unpkg.com/mitt/dist/mitt.js"><img src="https://img.badgesize.io/https://unpkg.com/mitt/dist/mitt.js?compression=gzip" alt="gzip size"></a>
+  <a href="https://www.npmjs.org/package/strict-mitt"><img src="https://img.shields.io/npm/v/strict-mitt.svg" alt="npm"></a>
+  <img src="https://github.com/iyegoroff/strict-mitt/workflows/CI/badge.svg" alt="build status">
+  <a href="https://unpkg.com/strict-mitt/dist/mitt.js"><img src="https://img.badgesize.io/https://unpkg.com/strict-mitt/dist/mitt.js?compression=gzip" alt="gzip size"></a>
 </p>
 
 # Mitt
@@ -39,16 +39,16 @@ Then with a module bundler like [rollup](http://rollupjs.org/) or [webpack](http
 
 ```javascript
 // using ES6 modules
-import mitt from 'mitt'
+import mitt from "mitt";
 
 // using CommonJS modules
-var mitt = require('mitt')
+var mitt = require("mitt");
 ```
 
 The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com):
 
 ```html
-<script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+<script src="https://unpkg.com/strict-mitt/dist/mitt.umd.js"></script>
 ```
 
 You can find the library on `window.mitt`.
@@ -56,26 +56,26 @@ You can find the library on `window.mitt`.
 ## Usage
 
 ```js
-import mitt from 'mitt'
+import mitt from "mitt";
 
-const emitter = mitt()
+const emitter = mitt();
 
 // listen to an event
-emitter.on('foo', e => console.log('foo', e) )
+emitter.on("foo", (e) => console.log("foo", e));
 
 // listen to all events
-emitter.on('*', (type, e) => console.log(type, e) )
+emitter.on("*", (type, e) => console.log(type, e));
 
 // fire an event
-emitter.emit('foo', { a: 'b' })
+emitter.emit("foo", { a: "b" });
 
 // clearing all events
-emitter.all.clear()
+emitter.all.clear();
 
 // working with handler references:
 function onFoo() {}
-emitter.on('foo', onFoo)   // listen
-emitter.off('foo', onFoo)  // unlisten
+emitter.on("foo", onFoo); // listen
+emitter.off("foo", onFoo); // unlisten
 ```
 
 ### Typescript
@@ -83,12 +83,12 @@ emitter.off('foo', onFoo)  // unlisten
 Set `"strict": true` in your tsconfig.json to get improved type inference for `mitt` instance methods.
 
 ```ts
-import mitt from 'mitt';
+import mitt from "mitt";
 
 type Events = {
-  foo: string
-  bar?: number
-}
+  foo: string;
+  bar?: number;
+};
 
 const emitter: mitt.Emitter<Events> = mitt<Events>();
 ```
